@@ -1,0 +1,4 @@
+interface:
+  display_name: "Generador de Escenarios"
+  short_description: "Gothic art nouveau fantasy RPG environments"
+  default_prompt: "Use $generador-escenarios to create a refined gothic art nouveau fantasy location or environment prompt."

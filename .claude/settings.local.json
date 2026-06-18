@@ -1,0 +1,17 @@
+{
+  "permissions": {
+    "allow": [
+      "WebSearch",
+      "WebFetch(domain:github.com)",
+      "PowerShell(python \"C:\\\\Users\\\\alber\\\\foundry MCP\\\\tmp_extract.py\")",
+      "mcp__foundry-mcp__get-world-info",
+      "PowerShell($base = \"C:\\\\Users\\\\alber\\\\Desktop\\\\Foundry V14\\\\Data\\\\worlds\\\\test\\\\campania\"; $dirs = @\\(\"mapas\\\\01-pueblo-taberna\",\"mapas\\\\02-camino-del-bosque\",\"mapas\\\\03-casa-arbol\",\"npcs\\\\retratos\",\"npcs\\\\tokens\",\"monstruos\\\\tokens\",\"objetos\",\"documentos\",\"audio\"\\); foreach \\($d in $dirs\\) { New-Item -ItemType Directory -Force \\(Join-Path $base $d\\) | Out-Null }; Get-ChildItem $base -Recurse -Directory | Select-Object FullName)",
+      "mcp__foundry-mcp__create-quest-journal",
+      "mcp__foundry-mcp__update-quest-journal",
+      "mcp__foundry-mcp__list-compendium-packs",
+      "PowerShell(Get-ChildItem \"C:\\\\Users\\\\alber\\\\Desktop\\\\Foundry V14\\\\Data\\\\worlds\\\\test\\\\campania\" -Recurse -File | Select-Object @{n='Ruta';e={$_.FullName.Replace\\('C:\\\\Users\\\\alber\\\\Desktop\\\\Foundry V14\\\\Data\\\\worlds\\\\test\\\\campania\\\\',''\\)}}, Length)",
+      "PowerShell(Get-ChildItem \"$env:LOCALAPPDATA\\\\FoundryMCPServer\" -Recurse -Depth 2 | Select-Object FullName, Length | Select-Object -First 40; Get-Content \"$env:APPDATA\\\\Claude\\\\claude_desktop_config.json\")",
+      "PowerShell($f = \"C:\\\\Users\\\\alber\\\\Desktop\\\\Foundry V14\\\\Data\\\\modules\\\\plutonium\\\\js\\\\Bundle.js\"; $content = [System.IO.File]::ReadAllText\\($f\\); $content.Substring\\(5807300, 1400\\))"
+    ]
+  }
+}

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Generador de Tokens"
+  short_description: "Themed round transparent DnD/Foundry tokens"
+  default_prompt: "Use $generador-de-tokens to convert a character portrait into a themed transparent round Foundry token."

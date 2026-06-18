@@ -1,0 +1,4 @@
+interface:
+  display_name: "Generador de Criaturas"
+  short_description: "Gothic art nouveau fantasy character portraits"
+  default_prompt: "Use $generador-criaturas to create a refined gothic art nouveau fantasy character portrait prompt."

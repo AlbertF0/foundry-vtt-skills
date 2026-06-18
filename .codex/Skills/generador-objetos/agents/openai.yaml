@@ -1,0 +1,4 @@
+interface:
+  display_name: "Generador de Objetos"
+  short_description: "Fantasy item token prompts for RPG equipment"
+  default_prompt: "Use $generador-objetos to create a square fantasy RPG item token prompt."
