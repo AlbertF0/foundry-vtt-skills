@@ -1,0 +1,5 @@
+[
+  ["plutonium-search-maps", {"query": "Cragmaw Hideout"}],
+  ["plutonium-import-map", {"name": "Cragmaw Hideout", "source": "LMoP", "customName": "Caso 1 - Plutonium solo", "folderName": "Prueba 3 casos"}],
+  ["plutonium-import-map", {"name": "Cragmaw Hideout", "source": "LMoP", "customName": "Caso 3 - Plutonium + imagen local", "folderName": "Prueba 3 casos", "backgroundOverride": "worlds/test/campania/mapas/02-camino-del-bosque/art-forest-path-battle-map-30x30-v0-k10rmxlg8v931.webp"}]
+]

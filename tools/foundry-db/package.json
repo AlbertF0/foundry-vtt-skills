@@ -1,0 +1,12 @@
+{
+  "name": "foundry-db",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Herramienta CLI para crear escenas, carpetas y parchear actores en la base de datos LevelDB de un mundo de Foundry VTT (con el mundo cerrado)",
+  "type": "module",
+  "bin": { "foundry-db": "./foundry-db.js" },
+  "dependencies": {
+    "classic-level": "^1.4.1",
+    "image-size": "^1.2.0"
+  }
+}

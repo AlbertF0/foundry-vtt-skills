@@ -1,0 +1,4 @@
+[
+  ["delete-documents", {"documents": [{"kind": "scene", "identifier": "XQOJXe3ScalJAmMG"}]}],
+  ["plutonium-import-map", {"name": "Cragmaw Hideout", "source": "LMoP", "customName": "Caso 3 - Plutonium + imagen local", "folderName": "Prueba 3 casos", "backgroundOverride": "worlds/test/campania/mapas/02-camino-del-bosque/art-forest-path-battle-map-30x30-v0-k10rmxlg8v931.webp"}]
+]

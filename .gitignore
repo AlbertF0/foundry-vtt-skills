@@ -1,0 +1,19 @@
+# Temp files de trabajo
+temp_*.html
+temp_*.txt
+temp_*.json
+
+# Node
+node_modules/
+
+# Python
+__pycache__/
+*.pyc
+
+# Entornos
+.env
+*.env.local
+
+# OS
+.DS_Store
+Thumbs.db

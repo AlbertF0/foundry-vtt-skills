@@ -1,0 +1,3 @@
+[submodule "foundry-vtt-mcp"]
+	path = foundry-vtt-mcp
+	url = https://github.com/AlbertF0/foundry-vtt-mcp.git
