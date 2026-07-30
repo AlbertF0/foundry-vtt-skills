@@ -23,6 +23,26 @@ Skill monotarea: hace que **una copia de la carpeta del mundo sea autosuficiente
 
 ---
 
+## Antes de empezar — Red de seguridad
+
+Esta skill reescribe las rutas de las escenas. Si la carpeta del mundo es un repositorio git (`worlds/<mundo>/.git`), comprueba antes que esté limpio:
+
+```bash
+git -C "<Data>/worlds/<mundo>" status --short
+```
+
+Si hay cambios pendientes, dilo y ofrece commitearlos antes de empezar. Si no hay repo, avísalo una vez y continúa si el usuario quiere.
+
+Recuperación si algo sale mal, con Foundry cerrado:
+
+```bash
+cd "<Data>/worlds/<mundo>" && rm -rf data && git checkout <tag o commit> -- data
+```
+
+Ojo con el alcance de esa red: el repo del mundo versiona **documentos**, no los binarios de `assets/`. Da igual aquí, porque esta skill **copia y nunca borra** — el original se queda donde estaba —, pero es la razón por la que la limpieza de orígenes va aparte y siempre con confirmación.
+
+---
+
 ## Paso 0 — Comprobar ffmpeg
 
 Solo hace falta si aparecen mapas en vídeo. Por orden:

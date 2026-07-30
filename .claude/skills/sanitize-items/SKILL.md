@@ -23,6 +23,26 @@ Skill monotarea: coge los **items de mundo** (`game.items`, la pestaña Objetos 
 
 ---
 
+## Antes de empezar — Red de seguridad
+
+Esta skill reescribe documentos del mundo. Si la carpeta del mundo es un repositorio git (`worlds/<mundo>/.git`), comprueba que **no haya cambios sin commitear** antes de tocar nada:
+
+```bash
+git -C "<Data>/worlds/<mundo>" status --short
+```
+
+- **Limpio** → adelante: hay un punto de restauración al que volver.
+- **Sucio** → dile al usuario qué hay pendiente y ofrece commitearlo antes de empezar. Un commit hecho con Foundry abierto es una instantánea en caliente: sirve, pero la fiable se toma con el mundo cerrado.
+- **No hay repo** → avísalo una vez y continúa si el usuario quiere; no es un bloqueo.
+
+Si algo sale mal a media pasada, la recuperación es cerrar Foundry y:
+
+```bash
+cd "<Data>/worlds/<mundo>" && rm -rf data && git checkout <tag o commit> -- data
+```
+
+---
+
 ## Paso 0 — Fijar el alcance (una carpeta)
 
 El alcance es **una carpeta del árbol de Objetos** (o varias si el usuario las enumera). Nunca "todo el mundo": sanear es caro en tokens y así las carpetas ya hechas no se vuelven a mirar.
