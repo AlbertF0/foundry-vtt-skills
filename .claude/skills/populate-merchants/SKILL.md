@@ -44,18 +44,23 @@ Con las respuestas del usuario, genera una tabla de **20 objetos** candidatos. M
 **Criterios de la propuesta:**
 - Variedad de tipos dentro del nicho declarado (no pongas 20 pociones si el mercader es "miscélaneo").
 - Distribución de rareza realista: la mayoría en el rango bajo-medio, 2-3 objetos en la rareza máxima indicada.
-- Precio orientativo en po, ajustado al nivel de los PJs (usa la tabla de precios del DMG como referencia base, ajustando por contexto del mundo).
+- **Precio por demanda real, no por tabla ciega.** Usa el DMG como punto de partida, pero repriecia cualquier objeto cuyo efecto sea un salto de poder duradero (fijar una característica, un bonificador permanente universal como +CA/salvaciones, acceso a un deseo, etc.) — esos se pagan como si fueran una categoría de rareza por encima de la nominal. Pregúntate "¿cuánto pagaría la mesa por esto de verdad?" antes de copiar un número.
 - Al menos 5 objetos homebrew que encajen con la ambientación específica del capítulo/mundo.
 - Ningún objeto que ya esté asignado a un NPC o loot concreto en el manifiesto (no vendas lo que los PJs pueden robar).
+- Si el nicho del mercader pide objetos con pega narrativa ("por qué lo devolvieron", maldiciones, trueques con riesgo), el fallo debe ser **mecánico y estar acoplado al propio efecto bueno** — nunca una nota de sabor sin peso en las tiradas (p.ej. "desventaja en notar que estás cansado" no vale; "no puedes usar tu reacción durante el mismo intervalo en que usaste la ventaja" sí).
 
-**Formato de la tabla:**
+**Formato de la tabla — SIEMPRE con estas columnas, en este orden:**
 
-| # | Nombre | Tipo Foundry | Rareza | Precio (po) | Origen | Descripción mecánica breve |
-|---|--------|-------------|--------|-------------|--------|---------------------------|
-| 1 | ... | consumable / weapon / equipment / loot / tool | Común | 50 | Oficial (DMG p.187) / Homebrew | Una frase de qué hace |
-| … | … | … | … | … | … | … |
+| # | Nombre | Tipo Foundry | Rareza | Sintonización | Recarga | Precio (po) | Qué hace |
+|---|--------|-------------|--------|----------------|---------|-------------|----------|
+| 1 | ... | consumable / weapon / equipment / loot / tool | Común | Sí / No | 1/día · 1/descanso corto · 1/descanso largo · 1/combate · Ninguna (pasivo) · No se recarga (un solo uso) | 50 | Una frase de qué hace, con los números concretos (CD, dados, distancias) |
+| … | … | … | … | … | … | … | … |
 
 Tipos Foundry válidos: `weapon`, `equipment`, `consumable`, `loot`, `tool`.
+
+**Sintonización siempre explícita** (Sí o No en cada fila, nunca en blanco) y **Recarga siempre rellena** — un objeto sin límite de usos es "Ninguna (pasivo)", uno de un solo uso es "No se recarga (un solo uso)", nunca dejar la celda vacía.
+
+No incluyas una columna de "Origen" separada salvo que el usuario la pida — indica Oficial/Homebrew dentro de la columna "Qué hace" si hace falta precisarlo.
 
 ### Paso 1.4 — El usuario elige
 
@@ -85,10 +90,10 @@ Guarda el inventario del mercader en `assets/Images/Chapter XX/Items/<slug-merca
 
 ## Objetos seleccionados
 
-| Nombre | Tipo Foundry | Rareza | Precio (po) | Origen | Icono esperado |
-|--------|-------------|--------|-------------|--------|----------------|
-| Nombre del objeto | consumable | Poco Común | 150 | Homebrew | `assets/Images/Chapter XX/Items/slug.webp` |
-| … | … | … | … | … | … |
+| Nombre | Tipo Foundry | Rareza | Sintonización | Recarga | Precio (po) | Icono esperado |
+|--------|-------------|--------|----------------|---------|-------------|----------------|
+| Nombre del objeto | consumable | Poco Común | No | No se recarga (un solo uso) | 150 | `assets/Images/Chapter XX/Items/slug.webp` |
+| … | … | … | … | … | … | … |
 
 ## Descripción mecánica completa
 
@@ -140,6 +145,8 @@ Para cada objeto **listo**, usa `manage-world-items` (action `create`) para crea
 - `system.description.value`: descripción mecánica del inventario (HTML mínimo: `<p>texto</p>`)
 - `system.price.value` y `system.price.denomination`: precio en po
 - `system.rarity`: `common` / `uncommon` / `rare` / `veryRare` / `legendary`
+- `system.attunement`: si la fila dice Sintonización "Sí", márcalo como `required`; si es "No", déjalo sin sintonización
+- Si la Recarga no es "Ninguna (pasivo)" ni "No se recarga (un solo uso)", indica el número de usos y el periodo de recarga (`system.uses`) según lo acordado en la tabla (p.ej. 1 uso que recarga en descanso largo)
 - `folderName`: carpeta del capítulo del mercader (`Cap. X: Nombre del capítulo` — busca la carpeta existente con `manage-world-items` action `list` para no duplicar)
 
 Si el item ya existe en Foundry (mismo nombre en la carpeta), actualiza solo el `img` con `manage-world-items` action `update` — no lo recrees.
